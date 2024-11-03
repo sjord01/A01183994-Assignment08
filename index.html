@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+
+    version:    1.0
+    comments:   for COMP 2312 Assignment 08
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/styles.css">
+    <title>Assignment08</title>
+
+    <script src="src/javascript/jquery-3.7.0.min.js" defer></script>
+    <script src="src/javascript/product-viewer.js" defer></script>
+
+</head>
+
+<body>
+    <div class="wrapper-body">
+        <header class="primary-header flex">
+            <h2>Assignment 08</h2>
+        </header>
+
+        <main>
+            <section>  
+                <h1>Interactive Bicycle Product Viewer</h1>
+                <p>Welcome to our interactive bicycle product viewer featuring the LTD Race bike. This cutting-edge tool allows you to explore our product in 360 degrees, giving you a comprehensive view of its design and features. Simply use the Start and Stop buttons to control the rotation animation and get a detailed look at every angle of this high-performance bicycle. Whether you're a cycling enthusiast or a casual rider, this viewer will help you appreciate the intricate details and superior craftsmanship of the LTD Race.
+                </p>
+            </section>
+
+            <section>
+                <h2>Bike Product: LTD Race</h2>
+                <article class="flex">
+                    <figure id="img-main-product">
+                        <img src="./src/assets/images/product-images/bike-1.jpg" alt="LTD Race Bicycle">
+                    </figure>
+                    <nav class="flex" id="nav-btns s">
+                        <button class="btn-product" id="btn-start">Start</button>
+                        <button class="btn-product" id="btn-stop">Stop</button>
+                        <button class="btn-product" id="btn-revers">Reverse</button>
+                    </nav>
+                </article>
+
+                <aside id="popup" class="popup">
+                    <div class="popup-content">
+                        <h3>How to Use the Product Rotation Feature</h3>
+                        <p>To rotate the view of the bike, click on the 'Start' animation button. Stop the animation by clicking the 'Stop' button.</p>
+                        <button id="closePopup">Close</button>
+                    </div>
+                </aside>
+
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>
