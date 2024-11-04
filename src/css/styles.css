@@ -51,11 +51,12 @@ button {
     transform: scale(1);
 }
 
-.btn-main:hover, #btn-form:hover {
+.btn-main:hover, #btn-form:hover, .btn-product:hover {
     background-color: var(--orange-01);
 }
 
-.btn-main:active, #btn-form:active {
+.btn-main:active, #btn-form:active, .btn-product:active {
+    background-color: var(--light-blue-02);
     transform: scale(0.95);
 }
 
@@ -173,19 +174,32 @@ article {
     border-radius: 8px;
     display: inline-flex; /* Change from flex to inline-flex */
     flex-direction: column;
-    align-items: center;
     gap: 1rem;
 }
 
 #img-main-product {
     overflow: hidden;
     object-fit: cover;
+    cursor: pointer;
 }
 
 #nav-btns {
     flex-direction: column;
-    flex: 1;
-    justify-content: center;
+    justify-content: left;
+    gap: 1rem;
+}
+
+.btn-product {
+    font-size: 0.75rem;
+    padding: 1rem 0;
+    border-radius: 1px;
+    background-color: var(--blue-01);
+    border-radius: 4px;
+    color: var(--white-primary);
+}
+
+.btn-product:hover {
+    color: var(--dark-primary);
 }
 
 /* POP-UP CONTENT */
@@ -206,7 +220,8 @@ article {
 }
 
 .popup-content {
-    background-color: white;
+    background-color: var(--light-blue-02);
+    max-width: 280px;
     padding: 20px;
     border-radius: 5px;
     text-align: center;
@@ -214,12 +229,42 @@ article {
 
 #closePopup {
     margin-top: 10px;
+    background-color: red;
+    color: var(--white-primary);
+}
+
+#closePopup:hover {
+    background-color: rgba(255, 0, 0, 0.75);
+}
+
+#closePopup:active {
+    background-color: var(--orange-01);
+    color: var(--dark-primary);
+    transform: scale(0.95);
+}
+
+#container-product-viewer {
+    grid-area: 1 / 1 / 1 / -1;
+}
+
+
+@media (min-width: 540px) {
+    #nav-btns {
+        flex-direction: row;
+        flex: 1;
+        gap: 0 8px;
+    }
+
+    .btn-product {
+        font-size: 0.75rem;
+        padding: 0.75rem 1.25rem;
+    }
 }
 
 @media (min-width: 767px) { 
     /* BUTTONS */
      header {
-        margin: 0 1rem;
+        margin: 0;
      }
  
      /* MAIN BODY */
@@ -252,9 +297,12 @@ article {
         line-height: calc(1.25rem + 4px);
     }
 
-    #nav-btns {
-        flex-direction: row;
-        flex: 1;
+    .popup-content {
+        max-width: 640px;
+    }
+
+    #container-product-viewer {
+        grid-area: 1 / 3 / 1 / 11;
     }
 
 }
@@ -262,7 +310,7 @@ article {
 @media (min-width: 992px) {
     /* BUTTONS */
     header {
-        margin: 0 1rem;
+        margin: 0;
      }
 
     /* MAIN BODY */

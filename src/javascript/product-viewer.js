@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const reverseButton = document.getElementById('btn-revers');
     const closePopupButton = document.getElementById('closePopup');
     const bicycleImage = document.querySelector('#img-main-product img');
+    const imageFigure = document.getElementById('img-main-product');
 
     // Animation state variables
     let currentFrame = 1;
@@ -58,6 +59,18 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isAnimating) startAnimation();
     }
 
+     // Function to toggle animation when clicking the image
+     // The image serves as a 'start' and 'stop' button  when the user clicks the image
+     function toggleAnimation() {
+        if (isAnimating) {
+            stopAnimation();
+        } else {
+            clearTimeout(popupTimer);
+            hasStartedAnimation = true;
+            startAnimation();
+        }
+    }
+
     // Function to show the popup
     function showPopup() {
         popup.style.visibility = 'visible';
@@ -79,4 +92,5 @@ document.addEventListener('DOMContentLoaded', function() {
     stopButton.addEventListener('click', stopAnimation);
     reverseButton.addEventListener('click', reverseAnimation);
     closePopupButton.addEventListener('click', hidePopup);
+    imageFigure.addEventListener('click', toggleAnimation);
 });
